@@ -4,14 +4,29 @@ import java.util.Scanner;
 public class Program {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in); // create input scanner
+		
 		int myAge;
+		boolean isValid = false;
 
 		
-		System.out.println("Please enter your age: ");
-		myAge = input.nextInt();
+		while (!isValid) {
+			Scanner input = new Scanner(System.in); // create input scanner
+			try {
+				
+				System.out.println("Please enter your age: ");
+				myAge = input.nextInt();
+				
+				System.out.println("\nYou entered: " + myAge);
+				isValid = true;
+				
+			} catch (Exception exception) {
+				System.out.println("Please enter a positive number");
+			}
+		}
 		
-		System.out.println("\nYou entered: " + myAge);
+		
+		
+		
 		
 	}
 
